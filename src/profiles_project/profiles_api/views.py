@@ -28,11 +28,7 @@ class HelloApiView(APIView):
 
         if serializer.is_valid():
             name = serializer.data.get('name')
-<<<<<<< HEAD
             message = 'Hello {name}'.format(name=name)
-=======
-            message = 'Hello {name}'.format{name=name}
->>>>>>> 07a358597179d03dcf810d771254b148253cf43b
             return Response({'message': message})
         else:
             return Response(
