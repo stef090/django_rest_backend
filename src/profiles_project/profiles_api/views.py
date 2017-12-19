@@ -15,5 +15,5 @@ class HelloApiView(APIView):
 
         return Response({
                          'message':'Hello!',
-                         'api_view':api_view
+                         'api_view':api_view,
                          })
