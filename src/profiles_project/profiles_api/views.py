@@ -2,6 +2,7 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from . import serializers
+from rest_framework import status
 
 
 class HelloApiView(APIView):
@@ -33,3 +34,21 @@ class HelloApiView(APIView):
         else:
             return Response(
                 serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def put(self, request, pk=None):
+        """
+        Updates an object.
+        """
+        return Response({'method':'PUT'})
+
+    def patch(self, request, pk=None):
+        """
+        Updates only the provided fields.
+        """
+        return Response({'method':'PATCH'})
+
+    def delete(self, request, pk=None):
+        """
+        Deletes an object.
+        """
+        return Response({'method':'DELETE'})
